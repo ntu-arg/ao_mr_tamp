@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Local environments and editor files
+.venv/
+venv/
+.env
+.env.*
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
+
+# Generated planner results in the repository root
+/*_planned_path_*.txt
+/*_orbit_graph_*.txt
+/*_trial_statistics_*.txt
+/*_path_simulation_*.mp4
+/*_convergence_*.png
+/*_all_trial_paths.png
+/replay*.mp4
+
+# Large source videos stored outside the published docs site
+/assets/*.mp4

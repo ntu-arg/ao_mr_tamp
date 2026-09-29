@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="roof_object">
+  <!--
+    Solid triangular prism / roof object.
+    Overall dimensions: width X=0.070 m, depth Y=0.060 m,
+    height Z=0.060 m. The link frame is centered in X/Y and
+    lies on the bottom plane at Z=0.
+  -->
+  <material name="RoofOrangeRed">
+    <color rgba="0.90 0.20 0.05 1.0"/>
+  </material>
+
+  <link name="roof_link">
+    <!-- Center of mass of a uniform triangular prism is at z = h/3. -->
+    <inertial>
+      <origin xyz="0 0 0.020" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <!-- Uniform-solid values for b=0.070, d=0.060, h=0.060 m. -->
+      <inertia
+        ixx="5.0000e-05" ixy="0" ixz="0"
+        iyy="4.0417e-05" iyz="0" izz="5.0417e-05"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="roof_object.obj" scale="1 1 1"/>
+      </geometry>
+      <material name="RoofOrangeRed"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="roof_object.obj" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

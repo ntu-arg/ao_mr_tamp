@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="small_room">
+    <static>true</static>
+
+    <link name="floor">
+      <pose>0 0 0.01 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>6.0 8.0 0.02</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>6.0 8.0 0.02</size></box></geometry>
+        <material><ambient>0.88 0.89 0.91 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="north_wall">
+      <pose>0 3.96 0.16 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>6.0 0.08 0.3</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>6.0 0.08 0.3</size></box></geometry>
+        <material><ambient>0.62 0.70 0.78 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="south_wall">
+      <pose>0 -3.96 0.16 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>6.0 0.08 0.3</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>6.0 0.08 0.3</size></box></geometry>
+        <material><ambient>0.62 0.70 0.78 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="east_wall">
+      <pose>2.96 0 0.16 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.08 8.0 0.3</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.08 8.0 0.3</size></box></geometry>
+        <material><ambient>0.45 0.55 0.68 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="west_wall">
+      <pose>-2.96 0 0.16 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.08 8.0 0.3</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.08 8.0 0.3</size></box></geometry>
+        <material><ambient>0.45 0.55 0.68 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

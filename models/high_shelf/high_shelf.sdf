@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="high_shelf">
+    <static>true</static>
+
+    <!-- Outer size target: width=0.60, depth=0.27, height=1.40 -->
+
+    <!-- Shelf boards (4 levels) -->
+    <link name="shelf_1">
+      <pose>0 0 0.0375 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+        <material><ambient>0.72 0.72 0.72 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="shelf_2">
+      <pose>0 0 0.4875 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+        <material><ambient>0.72 0.72 0.72 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="shelf_3">
+      <pose>0 0 0.9375 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+        <material><ambient>0.72 0.72 0.72 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="shelf_4">
+      <pose>0 0 1.3925 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.60 0.27 0.015</size></box></geometry>
+        <material><ambient>0.72 0.72 0.72 1</ambient></material>
+      </visual>
+    </link>
+
+    <!-- Vertical legs (4 corners) -->
+    <link name="leg_fl">
+      <pose>0.29 0.125 0.70 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="leg_fr">
+      <pose>0.29 -0.125 0.70 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="leg_rl">
+      <pose>-0.29 0.125 0.70 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="leg_rr">
+      <pose>-0.29 -0.125 0.70 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.02 0.02 1.40</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient></material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

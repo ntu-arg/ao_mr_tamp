@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<robot name="small_room">
+  <!--
+    A simple open-top room built from primitive boxes.
+    Room footprint: 6m x 8m
+    Wall height: 0.3m
+    Wall thickness: 0.08m
+    Visual style: cool gray / blue, intentionally not wooden.
+  -->
+
+  <material name="RoomFloor">
+    <color rgba="0.88 0.89 0.91 1.0"/>
+  </material>
+
+  <material name="RoomWall">
+    <color rgba="0.62 0.70 0.78 1.0"/>
+  </material>
+
+  <material name="RoomWallAccent">
+    <color rgba="0.45 0.55 0.68 1.0"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/>
+    </inertial>
+  </link>
+
+  <!-- North wall -->
+  <link name="north_wall">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="6.0 0.08 0.3"/>
+      </geometry>
+      <material name="RoomWall"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="6.0 0.08 0.3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="north_wall_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="north_wall"/>
+    <origin xyz="0 3.96 0.16" rpy="0 0 0"/>
+  </joint>
+
+  <!-- South wall -->
+  <link name="south_wall">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="6.0 0.08 0.3"/>
+      </geometry>
+      <material name="RoomWall"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="6.0 0.08 0.3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="south_wall_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="south_wall"/>
+    <origin xyz="0 -3.96 0.16" rpy="0 0 0"/>
+  </joint>
+
+  <!-- East wall -->
+  <link name="east_wall">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 8.0 0.3"/>
+      </geometry>
+      <material name="RoomWallAccent"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 8.0 0.3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="east_wall_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="east_wall"/>
+    <origin xyz="2.96 0 0.16" rpy="0 0 0"/>
+  </joint>
+
+  <!-- West wall -->
+  <link name="west_wall">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 8.0 0.3"/>
+      </geometry>
+      <material name="RoomWallAccent"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 8.0 0.3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="west_wall_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="west_wall"/>
+    <origin xyz="-2.96 0 0.16" rpy="0 0 0"/>
+  </joint>
+</robot>

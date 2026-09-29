@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<robot name="simple_shelf">
+  <!--
+    A simple shelf built from box primitives.
+    Dimensions (meters): width=0.8, depth=0.3, height=0.9, thickness=0.02
+    Compartments: two vertical compartments (bottom and top) split by a middle board.
+  -->
+
+  <material name="ShelfWood">
+    <color rgba="0.66 0.50 0.34 1.0"/>
+  </material>
+
+  <material name="ShelfLegDark">
+    <color rgba="0.24 0.20 0.17 1.0"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/>
+    </inertial>
+  </link>
+
+  <!-- Bottom board -->
+  <link name="bottom_board">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.3 0.02"/>
+      </geometry>
+      <material name="ShelfWood"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.3 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="bottom_board_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="bottom_board"/>
+    <origin xyz="0 0 0.13" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Top board -->
+  <link name="top_board">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.3 0.02"/>
+      </geometry>
+      <material name="ShelfWood"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.3 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="top_board_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="top_board"/>
+    <origin xyz="0 0 1.01" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Middle divider board (creates two compartments) -->
+  <link name="middle_board">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.3 0.02"/>
+      </geometry>
+      <material name="ShelfWood"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.3 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="middle_board_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="middle_board"/>
+    <origin xyz="0 0 0.57" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Left side panel -->
+  <link name="left_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.5"/>
+      <inertia ixx="0.03" ixy="0" ixz="0" iyy="0.03" iyz="0" izz="0.03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.3 0.9"/>
+      </geometry>
+      <material name="ShelfWood"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.3 0.9"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_panel"/>
+    <origin xyz="-0.39 0 0.57" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Right side panel -->
+  <link name="right_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.5"/>
+      <inertia ixx="0.03" ixy="0" ixz="0" iyy="0.03" iyz="0" izz="0.03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.3 0.9"/>
+      </geometry>
+      <material name="ShelfWood"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.3 0.9"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_panel"/>
+    <origin xyz="0.39 0 0.57" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Back panel -->
+  <link name="back_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.02 0.9"/>
+      </geometry>
+      <material name="ShelfWood"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.02 0.9"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="back_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_panel"/>
+    <origin xyz="0 -0.14 0.57" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Front-left leg -->
+  <link name="front_left_leg">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.8"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+      <material name="ShelfLegDark"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="front_left_leg_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_left_leg"/>
+    <origin xyz="-0.35 0.11 0.06" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Front-right leg -->
+  <link name="front_right_leg">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.8"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+      <material name="ShelfLegDark"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="front_right_leg_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_right_leg"/>
+    <origin xyz="0.35 0.11 0.06" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Rear-left leg -->
+  <link name="rear_left_leg">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.8"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+      <material name="ShelfLegDark"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rear_left_leg_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_left_leg"/>
+    <origin xyz="-0.35 -0.11 0.06" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Rear-right leg -->
+  <link name="rear_right_leg">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.8"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+      <material name="ShelfLegDark"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rear_right_leg_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_right_leg"/>
+    <origin xyz="0.35 -0.11 0.06" rpy="0 0 0"/>
+  </joint>
+</robot>

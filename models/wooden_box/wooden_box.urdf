@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<robot name="wooden_box">
+  <!-- Outer dimensions: width=0.25 m, depth=0.35 m, height=0.20 m -->
+
+  <material name="WoodLight">
+    <color rgba="0.72 0.53 0.34 1.0"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/>
+    </inertial>
+  </link>
+
+  <!-- Bottom panel -->
+  <link name="bottom_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.4"/>
+      <inertia ixx="5e-4" ixy="0" ixz="0" iyy="5e-4" iyz="0" izz="5e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.25 0.35 0.01"/></geometry>
+      <material name="WoodLight"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.25 0.35 0.01"/></geometry>
+    </collision>
+  </link>
+  <joint name="bottom_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="bottom_panel"/>
+    <origin xyz="0 0 0.005" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Left side panel -->
+  <link name="left_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.25"/>
+      <inertia ixx="3e-4" ixy="0" ixz="0" iyy="3e-4" iyz="0" izz="3e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.01 0.35 0.20"/></geometry>
+      <material name="WoodLight"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.01 0.35 0.20"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_panel"/>
+    <origin xyz="-0.12 0 0.10" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Right side panel -->
+  <link name="right_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.25"/>
+      <inertia ixx="3e-4" ixy="0" ixz="0" iyy="3e-4" iyz="0" izz="3e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.01 0.35 0.20"/></geometry>
+      <material name="WoodLight"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.01 0.35 0.20"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_panel"/>
+    <origin xyz="0.12 0 0.10" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Front panel -->
+  <link name="front_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.25"/>
+      <inertia ixx="3e-4" ixy="0" ixz="0" iyy="3e-4" iyz="0" izz="3e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.25 0.01 0.20"/></geometry>
+      <material name="WoodLight"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.25 0.01 0.20"/></geometry>
+    </collision>
+  </link>
+  <joint name="front_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_panel"/>
+    <origin xyz="0 0.17 0.10" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Back panel -->
+  <link name="back_panel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.25"/>
+      <inertia ixx="3e-4" ixy="0" ixz="0" iyy="3e-4" iyz="0" izz="3e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.25 0.01 0.20"/></geometry>
+      <material name="WoodLight"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.25 0.01 0.20"/></geometry>
+    </collision>
+  </link>
+  <joint name="back_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_panel"/>
+    <origin xyz="0 -0.17 0.10" rpy="0 0 0"/>
+  </joint>
+
+</robot>

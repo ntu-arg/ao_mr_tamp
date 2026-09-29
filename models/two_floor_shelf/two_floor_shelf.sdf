@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="two_floor_shelf">
+    <static>true</static>
+
+    <!-- Outer dimensions: width=0.31, depth=0.18, height=0.42 -->
+
+    <link name="bottom_panel">
+      <pose>0 0 0.005 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.31 0.18 0.01</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.31 0.18 0.01</size></box></geometry>
+        <material><ambient>0.72 0.53 0.34 1</ambient><diffuse>0.72 0.53 0.34 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name="top_panel">
+      <pose>0 0 0.415 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.31 0.18 0.01</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.31 0.18 0.01</size></box></geometry>
+        <material><ambient>0.72 0.53 0.34 1</ambient><diffuse>0.72 0.53 0.34 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name="middle_panel">
+      <pose>0 0 0.21 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.31 0.18 0.01</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.31 0.18 0.01</size></box></geometry>
+        <material><ambient>0.72 0.53 0.34 1</ambient><diffuse>0.72 0.53 0.34 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name="front_left_strut">
+      <pose>-0.15 0.085 0.21 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+        <material><ambient>0.72 0.53 0.34 1</ambient><diffuse>0.72 0.53 0.34 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name="front_right_strut">
+      <pose>0.15 0.085 0.21 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+        <material><ambient>0.72 0.53 0.34 1</ambient><diffuse>0.72 0.53 0.34 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name="back_left_strut">
+      <pose>-0.15 -0.085 0.21 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+        <material><ambient>0.72 0.53 0.34 1</ambient><diffuse>0.72 0.53 0.34 1</diffuse></material>
+      </visual>
+    </link>
+
+    <link name="back_right_strut">
+      <pose>0.15 -0.085 0.21 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.01 0.01 0.42</size></box></geometry>
+        <material><ambient>0.72 0.53 0.34 1</ambient><diffuse>0.72 0.53 0.34 1</diffuse></material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

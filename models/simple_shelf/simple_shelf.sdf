@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="simple_shelf">
+    <static>true</static>
+
+    <link name="bottom_board">
+      <pose>0 0 0.01 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.8 0.3 0.02</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.3 0.02</size></box></geometry>
+        <material><ambient>0.75 0.75 0.75 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="middle_board">
+      <pose>0 0 0.45 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.8 0.3 0.02</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.3 0.02</size></box></geometry>
+        <material><ambient>0.75 0.75 0.75 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="top_board">
+      <pose>0 0 0.89 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.8 0.3 0.02</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.3 0.02</size></box></geometry>
+        <material><ambient>0.75 0.75 0.75 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="left_panel">
+      <pose>-0.39 0 0.45 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.02 0.3 0.9</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.02 0.3 0.9</size></box></geometry>
+        <material><ambient>0.75 0.75 0.75 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="right_panel">
+      <pose>0.39 0 0.45 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.02 0.3 0.9</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.02 0.3 0.9</size></box></geometry>
+        <material><ambient>0.75 0.75 0.75 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name="back_panel">
+      <pose>0 -0.14 0.45 0 0 0</pose>
+      <collision name="collision">
+        <geometry><box><size>0.8 0.02 0.9</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.02 0.9</size></box></geometry>
+        <material><ambient>0.75 0.75 0.75 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

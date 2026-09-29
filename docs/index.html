@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Asymptotically Optimal Multi-Robot Task and Motion Planning — paper and code.">
+  <title>Asymptotically Optimal Multi-Robot Task and Motion Planning</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #202020;
+      font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(820px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0 64px; }
+    header { text-align: center; }
+    h1 {
+      margin: 0 auto 20px;
+      max-width: 800px;
+      font: 700 clamp(2rem, 5vw, 3rem)/1.18 Georgia, "Times New Roman", serif;
+      letter-spacing: -.025em;
+    }
+    .authors { margin: 0; font-size: 1.05rem; }
+    .venue { margin: 9px 0 27px; color: #666; font-size: .94rem; }
+    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .links a {
+      min-width: 82px;
+      padding: 7px 15px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      color: #222;
+      text-decoration: none;
+      font-size: .94rem;
+    }
+    .links a:hover, .links a:focus-visible { border-color: #222; background: #f5f5f5; }
+    section { margin-top: 62px; }
+    section[aria-labelledby="abstract-heading"] p { text-align: justify; }
+    h2 { margin: 0 0 15px; font: 700 1.5rem/1.3 Georgia, "Times New Roman", serif; }
+    p { margin: 0; }
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      background: #111;
+    }
+    a { color: #202020; }
+    pre {
+      margin: 0;
+      padding: 18px;
+      overflow-x: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #fafafa;
+      font: .81rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    footer { margin-top: 62px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: .9rem; }
+    @media (max-width: 560px) {
+      main { width: min(820px, calc(100% - 32px)); padding-top: 48px; }
+      section { margin-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Asymptotically Optimal Multi-Robot Task and Motion Planning</h1>
+      <p class="authors">Thi Thuy Ngan Duong · Cheuk Tung Shadow Yiu · Rahul Shome · Yoonchang Sung</p>
+      <p class="venue">arXiv preprint, 2026</p>
+      <nav class="links" aria-label="Paper links">
+        <a href="https://arxiv.org/abs/2609.18813">Paper</a>
+        <!-- <a href="https://arxiv.org/pdf/2609.18813">PDF</a> -->
+        <a href="https://github.com/ntu-arg/ao_mr_tamp">Code</a>
+      </nav>
+    </header>
+
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>
+        Multi-robot task and motion planning (MR-TAMP) requires jointly reasoning about discrete task decisions and continuous collision-free motions of multiple interacting robots. Although asymptotically optimal algorithms have been developed for task and motion planning, extending these guarantees to the multi-robot setting introduces an important challenge: different task transitions may involve different subsets of robots and therefore impose constraints of different dimensions on the composite configuration space. Consequently, an asymptotically optimal planner must not only optimize motion within each task mode, but also ensure sufficient exploration of the different types of transitions connecting them. We characterize this transition structure and establish sufficient conditions for global asymptotic optimality in MR-TAMP, requiring persistent coverage of relevant transitions and asymptotically improving motion planning within connected feasible regions. Based on these conditions, we develop an efficient asymptotically optimal MR-TAMP algorithm that combines evolving individual-robot roadmaps with implicit tensor-product search, avoiding explicit construction of the composite roadmap. The planner further employs conditional transition sampling, lazy collision checking, and mode- and solution-level guidance to improve finite-time planning efficiency while retaining persistent exploration. The resulting framework provides asymptotic optimality guarantees for multi-robot manipulation while efficiently exploiting the structure of individual-robot motion planning.
+      </p>
+    </section>
+
+    <section aria-labelledby="video-heading">
+      <h2 id="video-heading">Video</h2>
+      <video controls playsinline preload="metadata" aria-label="Project demonstration video">
+        <source src="assets/ao_mrtamp.mp4" type="video/mp4">
+        Your browser does not support video playback.
+        <a href="assets/ao_mrtamp.mp4">Download the video</a>.
+      </video>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Citation</h2>
+      <pre><code>@article{duong2026asymptotically,
+  title={Asymptotically Optimal Multi-Robot Task and Motion Planning},
+  author={Duong, Thi Thuy Ngan and Yiu, Cheuk Tung Shadow and Shome, Rahul and Sung, Yoonchang},
+  journal={arXiv preprint arXiv:2609.18813},
+  year={2026}
+}</code></pre>
+    </section>
+
+    <footer>Project code and setup instructions are available on <a href="https://github.com/ntu-arg/ao_mr_tamp">GitHub</a>.</footer>
+  </main>
+</body>
+</html>
