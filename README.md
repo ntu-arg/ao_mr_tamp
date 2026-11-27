@@ -1,5 +1,7 @@
 # Asymptotically Optimal Multi-Robot Task and Motion Planning
 
+[Blog](https://ntu-arg.github.io/ao_mr_tamp/)
+
 ## Highlights
 
 - An asymptotically optimal framework for multi-robot task and motion planning.
