@@ -1,0 +1,5 @@
+title: Asymptotically Optimal Multi-Robot Task and Motion Planning
+description: Notes on planning coordinated manipulation for multiple robots.
+markdown: kramdown
+exclude:
+  - README.md

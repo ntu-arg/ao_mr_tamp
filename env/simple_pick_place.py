@@ -588,6 +588,9 @@ class SimplePickPlaceEnv:
         # obj_orn = obj_state[1]
         # self.draw_frame(obj_pos, obj_orn)
 
+        # Turn of all the coordinates
+        p.configureDebugVisualizer(p.COV_ENABLE_GUI, 0)
+
     def simulate_goal(self):
         """
             Simulate the goal state of the environment for visualization.
@@ -2890,7 +2893,7 @@ def sample_yaw_quaternion(roll_target=0.0, pitch_target=0.0, discretization=1): 
 
 
 if __name__ == "__main__":
-    env = SimplePickPlaceEnv(num_robots=2, num_mobjects=6)
+    env = SimplePickPlaceEnv(num_robots=2, num_mobjects=2)
     try:
         env.keep_gui_alive()
     except KeyboardInterrupt:

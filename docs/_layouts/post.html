@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description | escape }}">
+  <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #202020; background: #fff; font: 17px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(760px, calc(100% - 40px)); margin: auto; padding: 48px 0 64px; }
+    a { color: #245b88; text-underline-offset: .18em; }
+    nav { margin-bottom: 48px; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; }
+    h1 { font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: -.025em; margin-bottom: 16px; }
+    h2 { margin-top: 40px; font-size: 1.6rem; }
+    .meta { color: #666; font-size: .94rem; margin-bottom: 36px; }
+    pre { padding: 18px; overflow-x: auto; background: #fafafa; border: 1px solid #ddd; border-radius: 5px; }
+    code { font-size: .88em; }
+    video { width: 100%; display: block; border-radius: 5px; background: #111; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+    .table-scroll { overflow-x: auto; }
+    footer { margin-top: 48px; border-top: 1px solid #ddd; padding-top: 20px; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Project navigation"><a href="./">Project home</a></nav>
+    <article>
+      <header>
+        <h1>{{ page.title | escape }}</h1>
+        <p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} · {{ page.author | escape }}{% endif %}</p>
+      </header>
+      {{ content }}
+    </article>
+    <footer><a href="https://github.com/ntu-arg/ao_mr_tamp">Explore the code on GitHub</a></footer>
+  </main>
+</body>
+</html>

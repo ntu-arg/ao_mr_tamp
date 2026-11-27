@@ -46,6 +46,22 @@
       border-radius: 5px;
       background: #111;
     }
+    .project-video { margin-top: 54px; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; height: auto; border-radius: 5px; }
+    .image-placeholder {
+      aspect-ratio: 16 / 9;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      border: 1px dashed #bbb;
+      border-radius: 5px;
+      background: #fafafa;
+      color: #666;
+      text-align: center;
+      font-size: .95rem;
+    }
+    .figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     a { color: #202020; }
     pre {
       margin: 0;
@@ -60,6 +76,8 @@
     @media (max-width: 560px) {
       main { width: min(820px, calc(100% - 32px)); padding-top: 48px; }
       section { margin-top: 48px; }
+      .project-video { margin-top: 42px; }
+      .figure-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -73,8 +91,15 @@
         <a href="https://arxiv.org/abs/2609.18813">Paper</a>
         <!-- <a href="https://arxiv.org/pdf/2609.18813">PDF</a> -->
         <a href="https://github.com/ntu-arg/ao_mr_tamp">Code</a>
+        <a href="planning-together.html">Blog</a>
       </nav>
     </header>
+
+    <video class="project-video" controls playsinline preload="metadata" aria-label="Project demonstration video">
+      <source src="assets/ao_mrtamp.mp4" type="video/mp4">
+      Your browser does not support video playback.
+      <a href="assets/ao_mrtamp.mp4">Download the video</a>.
+    </video>
 
     <section aria-labelledby="abstract-heading">
       <h2 id="abstract-heading">Abstract</h2>
@@ -83,13 +108,26 @@
       </p>
     </section>
 
-    <section aria-labelledby="video-heading">
-      <h2 id="video-heading">Video</h2>
-      <video controls playsinline preload="metadata" aria-label="Project demonstration video">
-        <source src="assets/ao_mrtamp.mp4" type="video/mp4">
-        Your browser does not support video playback.
-        <a href="assets/ao_mrtamp.mp4">Download the video</a>.
-      </video>
+    <section aria-labelledby="method-heading">
+      <h2 id="method-heading">Method</h2>
+      <figure>
+        <!-- Replace the div below with an image, for example: <img src="assets/method.png" alt="Method overview"> -->
+        <div class="image-placeholder">Method figure placeholder</div>
+      </figure>
+    </section>
+
+    <section aria-labelledby="experiments-heading">
+      <h2 id="experiments-heading">Further experiments</h2>
+      <div class="figure-grid">
+        <figure>
+          <!-- Replace with an experiment image. -->
+          <div class="image-placeholder">Experiment image 1</div>
+        </figure>
+        <figure>
+          <!-- Replace with an experiment image. -->
+          <div class="image-placeholder">Experiment image 2</div>
+        </figure>
+      </div>
     </section>
 
     <section aria-labelledby="citation-heading">
